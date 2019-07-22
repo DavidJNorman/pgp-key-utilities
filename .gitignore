@@ -1,0 +1,7 @@
+pgp-key-harvester/exported/**
+!README.md
+pgp-key-harvester/a.out
+pgp-key-fingerprint-list-generator/data/**
+!README.md
+pgp-fingerprint-wordlist-converter/io/**
+!README.md
