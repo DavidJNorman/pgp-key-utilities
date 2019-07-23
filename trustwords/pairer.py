@@ -3,7 +3,7 @@
 import sys
 
 def main(argv):
-    with open(str(argv[0]), 'r') as input_file, open(("output/%s" % str(argv[1])), "w+") as output_file:
+    with open(str(argv[0]), 'r') as input_file, open("output/%s" % str(argv[1]), "w+") as output_file:
         lines = input_file.readlines()
         for i in range(len(lines) - 1):
             for j in range(i + 1, len(lines)):

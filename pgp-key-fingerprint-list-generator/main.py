@@ -4,7 +4,7 @@ import sys, subprocess
 
 def main(argv):
     subprocess.run("gpg --import --import-options show-only %s \&> data/data.txt" % (str(argv[0])), shell=True)
-    with open("data/data.txt", 'r') as data, open("data/%s" % (str(argv[1])), "w+") as outputfile:
+    with open("data/data.txt", 'r') as data, open("data/%s" % str(argv[1]), "w+") as outputfile:
         copy_next = False
         for line in data.readlines():
             print(line)

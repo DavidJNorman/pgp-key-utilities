@@ -53,7 +53,7 @@ def fingerprint_to_words(fingerprint):
 
 def main(argv):
     load_mappings("en.csv")
-    with open(str(argv[0]), 'r') as input_file, open(("output/%s" % str(argv[1])), "w+") as output_file:
+    with open(str(argv[0]), 'r') as input_file, open("output/%s" % str(argv[1]), "w+") as output_file:
         for line in input_file:
             print("Processing " + line)
             trustwords_list = fingerprint_to_words(line)

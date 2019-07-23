@@ -267,7 +267,7 @@ def main(argv):
     def odd(fingerprint):
         return wordlist[fingerprint][1]
 
-    with open(str(argv[0]), 'r') as input_file, open(("io/%s" % (str(argv[1]))), "w+") as output_file:
+    with open(str(argv[0]), 'r') as input_file, open("io/%s" % (str(argv[1])), "w+") as output_file:
         for line in input_file:
             processed_line = line
             output_line = ""

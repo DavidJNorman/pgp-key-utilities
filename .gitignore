@@ -7,3 +7,5 @@ pgp-fingerprint-wordlist-converter/io/**
 !README.md
 trustwords/output/**
 !README.md
+word-analysis/output/**
+!README.md
