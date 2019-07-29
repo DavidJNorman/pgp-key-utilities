@@ -15,11 +15,12 @@ int main(int argc, char *argv[]) {
                     same = 0;
                 }
             }
-            if (!same) {
+            /*if (!same) {
                 for (int b = 0; b < 5; b++) {
                     char aliceByteStr[8], bobByteStr[8];
                     long int aliceXBob;
                     for (int count = 0; count < 8; count++) {
+                        printf("aliceKey[%d] = %c, line[%d] = %c\n", (b * 8) + count, aliceKey[(b * 8) + count], (b*8) + count, line[(b*8) + count]);
                         aliceByteStr[count] = aliceKey[(b * 8) + count];
                         bobByteStr[count] = line[(b * 8) + count];
                     }
@@ -27,6 +28,18 @@ int main(int argc, char *argv[]) {
                     printf("%08lX\n", strtol(bobByteStr, NULL, 16));
                     aliceXBob = strtol(aliceByteStr, NULL, 16) ^ strtol(bobByteStr, NULL, 16);
                     fprintf(outputFile, "%08lX", aliceXBob);
+                }
+                fprintf(outputFile, "\n");
+            }*/
+            if (!same) {
+                for (int i = 0; i < 40; i++) {
+                    char aliceChar[1], bobChar[1];
+                    long int aliceXBob;
+                    aliceChar[0] = aliceKey[i];
+                    bobChar[0] = line[i];
+                    aliceXBob = strtol(aliceChar, NULL, 16) ^ strtol(bobChar, NULL, 16);
+                    printf("%0lX ^ %0lX = %0lX\n", strtol(aliceChar, NULL, 16), strtol(bobChar, NULL, 16), aliceXBob);
+                    fprintf(outputFile, "%0lX", aliceXBob);
                 }
                 fprintf(outputFile, "\n");
             }
