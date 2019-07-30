@@ -10,27 +10,14 @@ int main(int argc, char *argv[]) {
         int same = 1;
         sprintf(aliceKey, "%s", argv[1]);
         while (fgets(line, sizeof(line), inputFile)) {
+            printf("aliceKey = %s, line = %s\n", aliceKey, line);
+            printf("With strtol applied:\n");
+            printf("aliceKey = %040lX, line = %040lX\n", strtol(aliceKey, NULL, 16), strtol(line, NULL, 16));
             for (int i = 0; i < 40; i++) {
                 if (line[i] != aliceKey[i]) {
                     same = 0;
                 }
             }
-            /*if (!same) {
-                for (int b = 0; b < 5; b++) {
-                    char aliceByteStr[8], bobByteStr[8];
-                    long int aliceXBob;
-                    for (int count = 0; count < 8; count++) {
-                        printf("aliceKey[%d] = %c, line[%d] = %c\n", (b * 8) + count, aliceKey[(b * 8) + count], (b*8) + count, line[(b*8) + count]);
-                        aliceByteStr[count] = aliceKey[(b * 8) + count];
-                        bobByteStr[count] = line[(b * 8) + count];
-                    }
-                    printf("%08lX\n", strtol(aliceByteStr, NULL, 16));
-                    printf("%08lX\n", strtol(bobByteStr, NULL, 16));
-                    aliceXBob = strtol(aliceByteStr, NULL, 16) ^ strtol(bobByteStr, NULL, 16);
-                    fprintf(outputFile, "%08lX", aliceXBob);
-                }
-                fprintf(outputFile, "\n");
-            }*/
             if (!same) {
                 for (int i = 0; i < 40; i++) {
                     char aliceChar[1], bobChar[1];
