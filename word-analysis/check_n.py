@@ -7,7 +7,7 @@ def main(argv):
         lines = infile.readlines()
         collisions = 0
         for i in range(len(lines) - 1):
-            if lines[i].split()[int(argv[2]) - 1] == lines[i + 1].split()[int(argv[1]) - 1]:
+            if lines[i].split()[int(argv[2]) - 1] == lines[i + 1].split()[int(argv[2]) - 1]:
                 collisions += 1
                 #outfile.write("%i\n" % (i - 1))
                 outfile.write("%s %i\n" % (lines[i][:-2], collisions))

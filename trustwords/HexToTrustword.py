@@ -43,9 +43,9 @@ def fingerprint_to_words(fingerprint):
 
     trustwords_str = " ".join(trustwords)
 
-    print("#" * (len(trustwords_str) + 1))
-    print(trustwords_str)
-    print("#" * (len(trustwords_str) + 1))
+    #print("#" * (len(trustwords_str) + 1))
+    #print(trustwords_str)
+    #print("#" * (len(trustwords_str) + 1))
 
     return trustwords
 
@@ -55,7 +55,7 @@ def main(argv):
     load_mappings("en.csv")
     with open(str(argv[0]), 'r') as input_file, open("output/%s" % str(argv[1]), "w+") as output_file:
         for line in input_file:
-            print("Processing " + line)
+            #print("Processing " + line)
             trustwords_list = fingerprint_to_words(line)
             output_line = ""
             for word in trustwords_list:

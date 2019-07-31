@@ -9,7 +9,7 @@ def main(argv):
             trustwords.append(line.split())
         trustwords.sort()
         for sublist in trustwords: 
-            print(" ".join(sublist))
+            #print(" ".join(sublist))
             outfile.write(" ".join(sublist) + "\n")
 
 if __name__ == "__main__" and len(sys.argv) == 3:
