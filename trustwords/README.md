@@ -2,7 +2,7 @@
 
 This folder contains utilities for working with the TrustWords representation of a pair of key fingerprints.
 
-All utilities described here place their output files in the `output/` folder.
+All utilities described here place their output files in the `output/` folder, **with the exception of** `alice_XOR.c`.
 
 ## Generating pairs
 
@@ -29,3 +29,13 @@ When running analysis programs that return a subset of the original file (e.g. t
 ```
 python3 line_num_appender.py input.txt output.txt
 ```
+
+## Generating `XOR`s of a particular "Alice" fingerprint with many "Bob" fingerprints
+
+Given a file containing many fingerprints (i.e. the fingerprints of many potential candidates for "Bob"), to generate the file containing the results of an `XOR` operation of those fingerprints with one fingerprint (i.e. the definite fingerprint for "Alice"), firstly compile the file `alice_XOR.c` and then run the following:
+
+```
+./a.out <alice_key> <input_file> <output_file>
+```
+
+Please note that all fingerprints should be 40 hex digits long for this program to work correctly.
